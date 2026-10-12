@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Felicidades Danyel! | Graduación Sexto Primaria</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#14213d;--gold:#d4a017;--gold-l:#f6e7b4;--cream:#fffaf0;--text:#2b2b3a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Poppins',system-ui,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,var(--navy),#22366b);color:#fff;text-align:center;padding:48px 20px 90px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;background:var(--cream);clip-path:ellipse(60% 100% at 50% 100%)}
+  .logo{width:130px;height:130px;margin:0 auto 24px;border-radius:50%;background:rgba(255,255,255,.08);border:2px dashed var(--gold);display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:.8rem;color:var(--gold-l);padding:12px}
+  .logo img{width:100%;height:100%;object-fit:contain;background:#fff}
+  .tag{letter-spacing:.25em;text-transform:uppercase;font-size:.8rem;color:var(--gold-l)}
+  .hero h1{font-size:clamp(2rem,7vw,3.6rem);margin:10px 0 6px;line-height:1.15}
+  .hero h1 span{color:var(--gold)}
+  .hero p.sub{font-size:1.05rem;opacity:.9}
+  .cap{font-size:3rem;margin-bottom:6px}
+
+  /* SECCIONES */
+  section{padding:56px 0}
+  h2{font-size:clamp(1.6rem,5vw,2.2rem);color:var(--navy);text-align:center;margin-bottom:8px}
+  .line{width:70px;height:3px;background:var(--gold);margin:0 auto 28px;border-radius:2px}
+  .card{background:#fff;border-radius:18px;padding:28px;box-shadow:0 8px 28px rgba(20,33,61,.08)}
+  .msg p{margin-bottom:14px;text-align:center;font-size:1.05rem}
+  .sign{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold);font-size:1.3rem;text-align:center}
+
+  .info{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .info .card{text-align:center}
+  .info .ico{font-size:1.8rem}
+  .info h3{font-size:1.1rem;color:var(--navy);margin:4px 0}
+
+  /* RECUERDOS */
+  .memories{background:linear-gradient(180deg,var(--gold-l),var(--cream))}
+  .memories .lead{text-align:center;max-width:600px;margin:0 auto 28px}
+  .btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.primary{background:var(--navy);color:#fff;box-shadow:0 6px 18px rgba(20,33,61,.3)}
+  .btn.second{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+  .note{text-align:center;font-size:.85rem;opacity:.75;margin-top:18px}
+
+  footer{background:var(--navy);color:var(--gold-l);text-align:center;padding:28px 20px;font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <!-- LOGO: guarda la imagen del colegio como "shadai.png" junto a este archivo -->
+  <div >
+    <img src="shadai3.jpeg" alt="Colegio el Shadai" onerror="this.remove();this.parentNode.insertAdjacentText('beforeend','Logo del colegio')">
+  </div>
+  <div class="cap">🎓</div>
+  <p class="tag">Graduación · Sexto Primaria</p>
+  <h1>¡Felicidades,<br><span>Danyel Adonias</span><br>Castañon Zacarias!</h1>
+  <p class="sub">Un gran paso en tu camino. ¡Estamos muy orgullosos de ti!</p>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>Un mensaje para ti</h2><div class="line"></div>
+      <div class="card msg">
+        <p>Hoy cierras una etapa llena de aprendizajes, amigos y recuerdos que llevarás siempre contigo.</p>
+        <p>Tu esfuerzo y dedicación han dado frutos, y esto es solo el comienzo de todo lo bueno que Dios tiene preparado para tu vida.</p>
+        <p>¡Sigue soñando en grande y nunca dejes de aprender!</p>
+        <div class="sign">Con todo nuestro cariño, tu familia ❤️</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Detalles del evento</h2><div class="line"></div>
+      <div class="info">
+        <!-- EDITA estos datos -->
+        <div class="card"><div class="ico">📅</div><h3>Fecha</h3><p>Viernes  23 de octubre de 2026</p></div>
+        <div class="card"><div class="ico">⏰</div><h3>Hora</h3><p>11:00 a.m.</p></div>
+        <div class="card"><div class="ico">📍</div><h3>Lugar</h3><p>Colegio Cristiano Bilingüe El Shadai</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="memories" id="recuerdos">
+    <div class="wrap">
+      <h2>📸 Comparte tus recuerdos</h2><div class="line"></div>
+      <p class="lead">¿Tomaste fotos o videos de la graduación? Súbelos aquí para que Danyel y su familia tengan todos los recuerdos en un solo lugar. ¡Gracias por acompañarnos!</p>
+      <div class="btns">
+        <a class="btn primary" id="btnSubir" href="#" target="_blank" rel="noopener">⬆️ Subir mis fotos</a>
+        <a class="btn second" id="btnVer" href="#" target="_blank" rel="noopener">🖼️ Ver el álbum</a>
+      </div>
+          </div>
+  </section>
+</main>
+
+<footer>Graduación Sexto Primaria · Danyel Adonias Castañon Zacarias · 2026</footer>
+
+<script>
+  // ====== EDITA SOLO ESTAS DOS LÍNEAS ======
+  const LINK_SUBIR = "https://www.dropbox.com/request/q7m2ibo8kvuj3r0lb7es";   // ej. Dropbox "Solicitud de archivos"
+  const LINK_VER   = "https://www.dropbox.com/scl/fo/pzwktgwuvzkhxgnm6otbg/AA5SuKniC5gcn1s9r-u2LfA?rlkey=yd1u6qc1oa3j0jbkuysktpcro&st=wbccyus1&dl=0";    // ej. carpeta compartida (solo ver). Déjalo vacío "" para ocultar el botón
+  // =========================================
+  document.getElementById("btnSubir").href = LINK_SUBIR;
+  const v = document.getElementById("btnVer");
+  if (LINK_VER) v.href = LINK_VER; else v.style.display = "none";
+</script>
+</body>
+</html>

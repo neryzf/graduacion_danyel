@@ -37,6 +37,13 @@
   .info .ico{font-size:1.8rem}
   .info h3{font-size:1.1rem;color:var(--navy);margin:4px 0}
 
+  /* TEMPORIZADOR */
+  .count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:560px;margin:0 auto}
+  .box{background:var(--navy);color:#fff;border-radius:16px;padding:18px 6px;text-align:center;box-shadow:0 8px 22px rgba(20,33,61,.18)}
+  .box b{display:block;font-family:'Playfair Display',serif;font-size:clamp(1.8rem,8vw,2.8rem);color:var(--gold);line-height:1.1}
+  .box small{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+  .done{display:none;text-align:center;font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy)}
+
   /* RECUERDOS */
   .memories{background:linear-gradient(180deg,var(--gold-l),var(--cream))}
   .memories .lead{text-align:center;max-width:600px;margin:0 auto 28px}
@@ -53,9 +60,9 @@
 <body>
 
 <header class="hero">
-  <!-- LOGO: guarda la imagen del colegio como "shadai.png" junto a este archivo -->
+  <!-- LOGO: guarda la imagen del colegio como "logo.png" junto a este archivo -->
   <div >
-    <img src="shadai3.jpeg" alt="Colegio el Shadai" onerror="this.remove();this.parentNode.insertAdjacentText('beforeend','Logo del colegio')">
+    <img src="shadai3.jpeg" alt="Logo del colegio" onerror="this.remove();this.parentNode.insertAdjacentText('beforeend','Logo del colegio')">
   </div>
   <div class="cap">🎓</div>
   <p class="tag">Graduación · Sexto Primaria</p>
@@ -70,8 +77,8 @@
       <div class="card msg">
         <p>Hoy cierras una etapa llena de aprendizajes, amigos y recuerdos que llevarás siempre contigo.</p>
         <p>Tu esfuerzo y dedicación han dado frutos, y esto es solo el comienzo de todo lo bueno que Dios tiene preparado para tu vida.</p>
-        <p>¡Sigue soñando en grande y nunca dejes de aprender!</p>
-        <div class="sign">Con todo nuestro cariño, tu familia ❤️</div>
+        <p>¡Sigue soñando en grande y nunca dejes de brillar!</p>
+        <div class="sign">Con todo nuestro cariño, te amamos y bendecimos, tu familia ❤️</div>
       </div>
     </div>
   </section>
@@ -81,10 +88,23 @@
       <h2>Detalles del evento</h2><div class="line"></div>
       <div class="info">
         <!-- EDITA estos datos -->
-        <div class="card"><div class="ico">📅</div><h3>Fecha</h3><p>Viernes  23 de octubre de 2026</p></div>
+        <div class="card"><div class="ico">📅</div><h3>Fecha</h3><p>Viernes 23 de octubre de 2026</p></div>
         <div class="card"><div class="ico">⏰</div><h3>Hora</h3><p>11:00 a.m.</p></div>
         <div class="card"><div class="ico">📍</div><h3>Lugar</h3><p>Colegio Cristiano Bilingüe El Shaddai</p></div>
       </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Faltan solo…</h2><div class="line"></div>
+      <div class="count" id="count">
+        <div class="box"><b id="d">0</b><small>Días</small></div>
+        <div class="box"><b id="h">0</b><small>Horas</small></div>
+        <div class="box"><b id="m">0</b><small>Minutos</small></div>
+        <div class="box"><b id="s">0</b><small>Segundos</small></div>
+      </div>
+      <div class="done" id="done">🎉 ¡Hoy es el gran día! 🎓</div>
     </div>
   </section>
 
@@ -96,7 +116,7 @@
         <a class="btn primary" id="btnSubir" href="#" target="_blank" rel="noopener">⬆️ Subir mis fotos</a>
         <a class="btn second" id="btnVer" href="#" target="_blank" rel="noopener">🖼️ Ver el álbum</a>
       </div>
-          </div>
+       </div>
   </section>
 </main>
 
@@ -110,6 +130,23 @@
   document.getElementById("btnSubir").href = LINK_SUBIR;
   const v = document.getElementById("btnVer");
   if (LINK_VER) v.href = LINK_VER; else v.style.display = "none";
+
+  // Temporizador: viernes 23 oct 2026, 11:00 a.m. hora Guatemala (UTC-6)
+  const META = new Date("2026-10-23T11:00:00-06:00").getTime();
+  function tick(){
+    const diff = META - Date.now();
+    if (diff <= 0){
+      document.getElementById("count").style.display = "none";
+      document.getElementById("done").style.display = "block";
+      return;
+    }
+    const sec = Math.floor(diff/1000);
+    document.getElementById("d").textContent = Math.floor(sec/86400);
+    document.getElementById("h").textContent = String(Math.floor(sec%86400/3600)).padStart(2,"0");
+    document.getElementById("m").textContent = String(Math.floor(sec%3600/60)).padStart(2,"0");
+    document.getElementById("s").textContent = String(sec%60).padStart(2,"0");
+  }
+  tick(); setInterval(tick, 1000);
 </script>
 </body>
 </html>
